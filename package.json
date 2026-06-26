@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "author": "",
   "private": true,
-  "homepage": "https://github.com/canonical/operator-workflows",
+  "homepage": "https://github.com/HomayoonAlimohammadi/operator-workflows",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/canonical/operator-workflows.git"
+    "url": "git+https://github.com/HomayoonAlimohammadi/operator-workflows.git"
   },
   "bugs": {
-    "url": "https://github.com/canonical/operator-workflows/issues"
+    "url": "https://github.com/HomayoonAlimohammadi/operator-workflows/issues"
   },
   "keywords": [
     "actions",

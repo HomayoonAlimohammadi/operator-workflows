@@ -1,6 +1,6 @@
 # How to set up Allure Reports for integration tests
 
-This how-to guide describes how to integrate [Allure Reports](https://allurereport.org/) into your code repository's [integration_test.yaml](https://github.com/canonical/operator-workflows?tab=readme-ov-file#integration-test-workflow-canonicaloperator-workflowsgithubworkflowsintegration_testyamlmain).
+This how-to guide describes how to integrate [Allure Reports](https://allurereport.org/) into your code repository's [integration_test.yaml](https://github.com/HomayoonAlimohammadi/operator-workflows?tab=readme-ov-file#integration-test-workflow-canonicaloperator-workflowsgithubworkflowsintegration_testyamlmain).
 
 ## Adding allure-pytest and pytest collection plugin
 
@@ -13,14 +13,14 @@ git+https://github.com/canonical/data-platform-workflows@v24.0.0\#subdirectory=p
 
 ## Calling the allure-workflow
 
-To call the reusable workflow [allure_report.yaml](https://github.com/canonical/operator-workflows/blob/main/.github/workflows/allure_report.yaml), add the following lines at the end of the workflow that runs the integrations tests:
+To call the reusable workflow [allure_report.yaml](https://github.com/HomayoonAlimohammadi/operator-workflows/blob/main/.github/workflows/allure_report.yaml), add the following lines at the end of the workflow that runs the integrations tests:
 
 ```
   allure-report:
     if: always() && !cancelled()
     needs:
       - [list of jobs that call integration_test workflow whose tests you would like to visualize]
-    uses: canonical/operator-workflows/.github/workflows/allure_report.yaml@main
+    uses: HomayoonAlimohammadi/operator-workflows/.github/workflows/allure_report.yaml@main
 ```
 
 For an example of this implementation, see [the GitHub runner repository](https://github.com/canonical/github-runner-operator/pull/412).

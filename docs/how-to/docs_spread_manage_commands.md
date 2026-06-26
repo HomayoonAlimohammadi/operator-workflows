@@ -1,6 +1,6 @@
 # How to manage commands picked up by the automated Spread testing process
 
-`canonical/operator-workflows/.github/workflows/docs_spread.yaml` runs
+`HomayoonAlimohammadi/operator-workflows/.github/workflows/docs_spread.yaml` runs
 `create_spread_task_file.py` over a documentation file
 to generate the `task.yaml` needed for a Spread test, and then runs Spread over the resulting file.
 This workflow supports Markdown and reStructuredText files.

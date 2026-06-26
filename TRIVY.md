@@ -23,7 +23,7 @@ In order to reduce the manual work of upgrading the ``.trivyignore`` file, inclu
 ```yaml
 jobs:
   integration-tests:
-    uses: canonical/operator-workflows/.github/workflows/integration_test.yaml@main
+    uses: HomayoonAlimohammadi/operator-workflows/.github/workflows/integration_test.yaml@main
     secrets: inherit
     with:
       trivy-image-config: tests/trivy/trivy.yaml

@@ -185,7 +185,7 @@ jobs:
       - uses: actions/checkout@v6.0.3
         with:
             fetch-depth: 0
-      - uses: canonical/operator-workflows/internal/plan@main
+      - uses: HomayoonAlimohammadi/operator-workflows/internal/plan@main
         id: plan
         with:
           identifier: ${{ inputs.identifier }}
@@ -259,7 +259,7 @@ jobs:
         if: ${{ matrix.build.type == 'charm' }}
         uses: canonical/get-workflow-version-action@v1.0.3
         with:
-          repository-name: canonical/operator-workflows
+          repository-name: HomayoonAlimohammadi/operator-workflows
           file-name: integration_test.yaml
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install charmbuild
@@ -267,13 +267,13 @@ jobs:
         run: |
           # upgrade setuptools & wheel package to avoid UNKNOWN charmbuild installation
           python3 -m pip install --upgrade ${PIP_BREAK_FLAG} pip setuptools wheel
-          python3 -m pip install ${PIP_BREAK_FLAG} git+https://github.com/canonical/operator-workflows@${{ steps.workflow-version.outputs.sha }}#subdirectory=charmbuild
+          python3 -m pip install ${PIP_BREAK_FLAG} git+https://github.com/HomayoonAlimohammadi/operator-workflows@${{ steps.workflow-version.outputs.sha }}#subdirectory=charmbuild
         shell: bash
       - name: Install rockcraft
         if: ${{ matrix.build.type == 'rock' }}
         run: sudo snap install rockcraft --channel ${{ inputs.rockcraft-channel }} --classic
         shell: bash
-      - uses: canonical/operator-workflows/internal/build@main
+      - uses: HomayoonAlimohammadi/operator-workflows/internal/build@main
         id: build
         with:
           build-plan: ${{ toJSON(matrix.build) }}
@@ -294,7 +294,7 @@ jobs:
     outputs:
       scans: ${{ steps.plan-scan.outputs.scans }}
     steps:
-      - uses: canonical/operator-workflows/internal/plan-scan@main
+      - uses: HomayoonAlimohammadi/operator-workflows/internal/plan-scan@main
         id: plan-scan
         with:
           plan: ${{ needs.plan.outputs.plan }}
